@@ -1,0 +1,902 @@
+/* 配色方案说明：
+   背景底色: #cfcece
+   主色（深蓝）: #576fa0
+   次主色（浅蓝）: #a7b9d7
+   强调色（红）: #b57979
+   装饰色（金）: #e3b87f
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* 强制 Arial */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #cfcece;
+    color: #333;
+}
+
+/* 全屏吸附仅用于未加 body 类的旧版；新版落地/简历/作品集为整页滚动 */
+body.landing-body,
+body.resume-track,
+body.portfolio-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(207, 206, 206, 0.9);
+    z-index: 1000;
+    border-bottom: 1px solid #a7b9d7;
+}
+
+a.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #576fa0;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-links a[aria-current="page"] {
+    color: #b57979;
+    border-bottom: 2px solid #b57979;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links--site {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 4px;
+}
+
+.nav-links--site li {
+    margin-left: 0;
+}
+
+.nav-links--site a {
+    padding: 4px 2px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #576fa0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b57979;
+}
+
+/* 分页容器（简历双页：取消吸附，允许长板块） */
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+body.resume-track .container {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    scroll-snap-type: none;
+}
+
+.page-section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    position: relative;
+}
+
+body.resume-track .page-section {
+    min-height: 100vh;
+    height: auto;
+    padding-top: 96px;
+    padding-bottom: 72px;
+    justify-content: flex-start;
+}
+
+.bg-alt {
+    background-color: #dcdcdc;
+}
+
+.bg-dark {
+    background-color: #576fa0;
+    color: #fff;
+}
+
+/* 标题样式 */
+.section-title {
+    font-size: 2.5rem;
+    color: #576fa0;
+    margin-bottom: 40px;
+    border-left: 8px solid #b57979;
+    padding-left: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.section-title small {
+    font-size: 1rem;
+    color: #a7b9d7;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* 第一屏：Hero */
+.hero-content {
+    text-align: center;
+}
+
+.placeholder-avatar {
+    width: 150px;
+    height: 150px;
+    background: #576fa0;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin: 0 auto 30px;
+    border: 5px solid #e3b87f;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #576fa0;
+}
+
+.tag {
+    font-size: 1rem;
+    background: #b57979;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+.target-job {
+    font-size: 1.5rem;
+    color: #b57979;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.brief-intro span {
+    margin: 0 15px;
+    color: #576fa0;
+    font-weight: bold;
+}
+
+/* 教育背景 */
+.timeline {
+    width: 100%;
+    max-width: 800px;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.time-box {
+    min-width: 150px;
+    color: #b57979;
+    font-weight: bold;
+    border-right: 2px solid #e3b87f;
+    padding-right: 20px;
+}
+
+.content-box {
+    padding-left: 30px;
+}
+
+.badge {
+    background: #e3b87f;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+/* 实习经历卡片 */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.exp-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid #576fa0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #cfcece;
+}
+
+.company {
+    font-weight: bold;
+    color: #576fa0;
+}
+
+.role {
+    color: #b57979;
+    font-size: 0.9rem;
+}
+
+.exp-card ul {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.exp-card li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.exp-card li::before {
+    content: "•";
+    color: #e3b87f;
+    position: absolute;
+    left: 0;
+}
+
+/* 项目详情 */
+.project-detail {
+    background: #fff;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 10px solid #e3b87f;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.project-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.p-block h5 {
+    color: #576fa0;
+    margin-bottom: 10px;
+}
+
+.p-block--full {
+    grid-column: 1 / -1;
+}
+
+.project-body--stack {
+    grid-template-columns: 1fr;
+}
+
+.project-secondary {
+    width: 100%;
+    margin-top: 36px;
+}
+
+.exp-grid--stack {
+    grid-template-columns: 1fr;
+}
+
+.exp-card--wide {
+    max-width: 100%;
+}
+
+.exp-subhead {
+    font-size: 0.85rem;
+    color: #576fa0;
+    font-weight: bold;
+    margin: 12px 0 8px;
+}
+
+.exp-crosslink {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed #cfcece;
+    font-size: 0.9rem;
+}
+
+.exp-crosslink a {
+    color: #576fa0;
+    text-decoration: none;
+}
+
+.exp-crosslink a:hover {
+    color: #b57979;
+    text-decoration: underline;
+}
+
+.edge-box {
+    background: #fff;
+    padding: 28px 36px;
+    border-radius: 12px;
+    border-left: 8px solid #e3b87f;
+    width: 100%;
+    max-width: 720px;
+    line-height: 1.85;
+}
+
+.edge-box p {
+    margin-bottom: 10px;
+}
+
+.edge-box--inline {
+    margin-top: 28px;
+    max-width: none;
+    text-align: center;
+}
+
+.edu-honor {
+    font-size: 0.88rem;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.55;
+}
+
+.hero-meta {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 12px;
+}
+
+/* 固定顶栏不占文档流，为子导航留出空隙 */
+body.resume-track > .subnav,
+body.portfolio-page > .subnav {
+    margin-top: 72px;
+}
+
+.subnav {
+    position: sticky;
+    top: 72px;
+    z-index: 900;
+    background: rgba(207, 206, 206, 0.96);
+    border-bottom: 1px solid #a7b9d7;
+    padding: 10px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+}
+
+.subnav a {
+    font-size: 0.8rem;
+    color: #576fa0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.subnav a:hover {
+    color: #b57979;
+}
+
+/* 落地页 */
+.landing-body {
+    min-height: 100vh;
+}
+
+.landing-main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 110px 8% 80px;
+    text-align: center;
+}
+
+.landing-avatar {
+    margin-bottom: 24px;
+}
+
+.landing-sub {
+    font-size: 1.25rem;
+    color: #576fa0;
+    margin-top: 8px;
+}
+
+.landing-target {
+    font-size: 1.2rem;
+    color: #b57979;
+    font-weight: bold;
+    margin: 16px 0 8px;
+}
+
+.landing-contact-line {
+    color: #555;
+    font-size: 0.95rem;
+    margin-top: 12px;
+}
+
+.landing-contact-line .sep {
+    margin: 0 10px;
+    color: #a7b9d7;
+}
+
+.landing-hint {
+    color: #666;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 36px 0 28px;
+}
+
+.landing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.landing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 36px 28px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 2px solid #a7b9d7;
+    background: #fff;
+}
+
+.landing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(87, 111, 160, 0.15);
+}
+
+.landing-card--bio {
+    border-top: 6px solid #576fa0;
+}
+
+.landing-card--net {
+    border-top: 6px solid #b57979;
+}
+
+.landing-card-icon {
+    font-size: 2.5rem;
+    color: #576fa0;
+    margin-bottom: 16px;
+}
+
+.landing-card--net .landing-card-icon {
+    color: #b57979;
+}
+
+.landing-card h2 {
+    color: #576fa0;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.landing-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    flex: 1;
+}
+
+.landing-card-go {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #b57979;
+    font-size: 0.95rem;
+}
+
+.landing-footer-links {
+    margin-top: 8px;
+}
+
+.landing-portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #576fa0;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 2px solid #576fa0;
+    border-radius: 30px;
+    transition: background 0.25s, color 0.25s;
+}
+
+.landing-portfolio-btn:hover {
+    background: #576fa0;
+    color: #fff;
+}
+
+.skills-prose {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 28px 32px;
+    border-radius: 12px;
+    line-height: 1.75;
+    text-align: left;
+}
+
+.skills-prose p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.skills-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #576fa0;
+}
+
+.skills-note a {
+    color: #b57979;
+    font-weight: bold;
+}
+
+.bg-dark .btn-primary--ghost {
+    background: transparent;
+    border: 2px solid #e3b87f;
+    color: #e3b87f;
+}
+
+.bg-dark .btn-primary--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* 作品集独立页（顶栏保持与简历页一致的 fixed） */
+.portfolio-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 8% 80px;
+}
+
+.portfolio-header {
+    margin-bottom: 40px;
+    padding-top: 16px;
+}
+
+.portfolio-header h1 {
+    font-size: 2.2rem;
+    color: #576fa0;
+    margin-bottom: 12px;
+}
+
+.portfolio-lead {
+    color: #555;
+    line-height: 1.65;
+    font-size: 0.98rem;
+}
+
+.portfolio-section {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.portfolio-section:last-of-type {
+    border-bottom: none;
+}
+
+.portfolio-section--alt {
+    background: #dcdcdc;
+    margin-left: -8%;
+    margin-right: -8%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 28px;
+    border-bottom: none;
+    border-radius: 8px;
+}
+
+.portfolio-h2 {
+    font-size: 1.35rem;
+    color: #576fa0;
+    margin-bottom: 16px;
+}
+
+.portfolio-context {
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.portfolio-context a {
+    color: #576fa0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.portfolio-context a:hover {
+    color: #b57979;
+    text-decoration: underline;
+}
+
+.portfolio-card--large {
+    max-width: 100%;
+}
+
+.portfolio-section .portfolio-card--large + .portfolio-card--large {
+    margin-top: 14px;
+}
+
+.portfolio-placeholder {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.55;
+}
+
+.portfolio-slot {
+    background: #fff;
+    padding: 20px 22px;
+    border-radius: 10px;
+    border: 1px dashed #a7b9d7;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.portfolio-slot-label {
+    display: block;
+    font-weight: bold;
+    color: #576fa0;
+    margin-bottom: 6px;
+}
+
+.portfolio-slot-desc {
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.portfolio-footer {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.subnav--portfolio {
+    top: 72px;
+}
+
+.portfolio-block {
+    width: 100%;
+    margin-top: 36px;
+}
+
+.subsection-title {
+    font-size: 1.35rem;
+    color: #576fa0;
+    margin-bottom: 12px;
+    border-left: 5px solid #e3b87f;
+    padding-left: 14px;
+    text-align: left;
+}
+
+.subsection-title small {
+    font-size: 0.75rem;
+    color: #a7b9d7;
+    text-transform: uppercase;
+    margin-left: 8px;
+}
+
+.portfolio-intro {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.portfolio-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #a7b9d7;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.portfolio-card:hover {
+    border-color: #576fa0;
+    box-shadow: 0 6px 20px rgba(87, 111, 160, 0.12);
+}
+
+.portfolio-card-icon {
+    flex-shrink: 0;
+    font-size: 2rem;
+    color: #b57979;
+}
+
+.portfolio-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.portfolio-card-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.portfolio-card-meta {
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.portfolio-card-action {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #576fa0;
+}
+
+/* 技能展示 */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.skill-group {
+    width: 30%;
+}
+
+.skill-group h5 {
+    color: #b57979;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.skill-tags span {
+    display: inline-block;
+    background: #a7b9d7;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+/* 联系方式与按钮 */
+.contact-box {
+    text-align: center;
+}
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.action-btns {
+    margin-top: 40px;
+}
+
+.btn-primary {
+    background: #b57979;
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    border: 2px solid #e3b87f;
+    color: #e3b87f;
+    padding: 13px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #a7b9d7;
+}
+
+/* 装饰元素 */
+.scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #a7b9d7;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-10px) translateX(-50%);}
+    60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+    }
+    .nav-links--site {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+        font-size: 0.72rem;
+        gap: 6px 12px;
+    }
+    .subnav {
+        padding: 8px 12px;
+        gap: 8px 14px;
+        font-size: 0.75rem;
+    }
+    .project-body { grid-template-columns: 1fr; }
+    .skills-container { flex-direction: column; }
+    .skill-group { width: 100%; margin-bottom: 30px; }
+    h1 { font-size: 2.5rem; }
+    .landing-cards { grid-template-columns: 1fr; }
+    .portfolio-card { flex-wrap: wrap; }
+    .portfolio-card-action { width: 100%; text-align: right; }
+    .portfolio-section--alt {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
