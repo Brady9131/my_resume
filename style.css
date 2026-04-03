@@ -1,8 +1,8 @@
-/* 配色方案说明：
-   背景底色: #cfcece
-   主色（深蓝）: #576fa0
-   次主色（浅蓝）: #a7b9d7
-   强调色（红）: #b57979
+/* 配色方案说明（偏麦肯锡 / 咨询风）：
+   背景底色: #f5f6fa
+   主色（深蓝）: #003366
+   次主色（冷灰蓝）: #c5d0e0
+   强调色（蓝绿）: #0088b3
    装饰色（金）: #e3b87f
 */
 
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    background-color: #cfcece;
-    color: #333;
+    background-color: #f5f6fa;
+    color: #2b3137;
 }
 
 /* 全屏吸附仅用于未加 body 类的旧版；新版落地/简历/作品集为整页滚动 */
@@ -38,23 +38,23 @@ body.portfolio-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(207, 206, 206, 0.9);
+    padding: 18px 50px;
+    background: rgba(255, 255, 255, 0.96);
     z-index: 1000;
-    border-bottom: 1px solid #a7b9d7;
+    border-bottom: 1px solid #d4dde8;
 }
 
-a.logo {
+ a.logo {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #576fa0;
+    color: #003366;
     letter-spacing: 2px;
     text-decoration: none;
 }
 
 .nav-links a[aria-current="page"] {
-    color: #b57979;
-    border-bottom: 2px solid #b57979;
+    color: #0088b3;
+    border-bottom: 2px solid #0088b3;
 }
 
 .nav-links {
@@ -82,14 +82,14 @@ a.logo {
 
 .nav-links a {
     text-decoration: none;
-    color: #576fa0;
+    color: #003366;
     font-size: 0.9rem;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #b57979;
+    color: #0088b3;
 }
 
 /* 分页容器（简历双页：取消吸附，允许长板块） */
@@ -127,20 +127,20 @@ body.resume-track .page-section {
 }
 
 .bg-alt {
-    background-color: #dcdcdc;
+    background-color: #edf1f7;
 }
 
 .bg-dark {
-    background-color: #576fa0;
+    background-color: #003366;
     color: #fff;
 }
 
 /* 标题样式 */
 .section-title {
     font-size: 2.5rem;
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 40px;
-    border-left: 8px solid #b57979;
+    border-left: 8px solid #0088b3;
     padding-left: 20px;
     width: 100%;
     text-align: left;
@@ -148,7 +148,7 @@ body.resume-track .page-section {
 
 .section-title small {
     font-size: 1rem;
-    color: #a7b9d7;
+    color: #8a96aa;
     display: block;
     text-transform: uppercase;
 }
@@ -161,7 +161,7 @@ body.resume-track .page-section {
 .placeholder-avatar {
     width: 150px;
     height: 150px;
-    background: #576fa0;
+    background: #003366;
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -169,17 +169,17 @@ body.resume-track .page-section {
     align-items: center;
     font-size: 4rem;
     margin: 0 auto 30px;
-    border: 5px solid #e3b87f;
+    border: 5px solid #c5d0e0;
 }
 
 h1 {
     font-size: 3.5rem;
-    color: #576fa0;
+    color: #003366;
 }
 
 .tag {
     font-size: 1rem;
-    background: #b57979;
+    background: #0088b3;
     color: #fff;
     padding: 5px 15px;
     border-radius: 20px;
@@ -188,14 +188,14 @@ h1 {
 
 .target-job {
     font-size: 1.5rem;
-    color: #b57979;
+    color: #0088b3;
     margin: 20px 0;
     font-weight: bold;
 }
 
 .brief-intro span {
     margin: 0 15px;
-    color: #576fa0;
+    color: #003366;
     font-weight: bold;
 }
 
@@ -212,9 +212,9 @@ h1 {
 
 .time-box {
     min-width: 150px;
-    color: #b57979;
+    color: #0088b3;
     font-weight: bold;
-    border-right: 2px solid #e3b87f;
+    border-right: 2px solid #c5d0e0;
     padding-right: 20px;
 }
 
@@ -242,8 +242,8 @@ h1 {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-top: 5px solid #576fa0;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+    border-top: 5px solid #003366;
 }
 
 .card-header {
@@ -251,16 +251,16 @@ h1 {
     justify-content: space-between;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed #cfcece;
+    border-bottom: 1px dashed #dde3ee;
 }
 
 .company {
     font-weight: bold;
-    color: #576fa0;
+    color: #003366;
 }
 
 .role {
-    color: #b57979;
+    color: #0088b3;
     font-size: 0.9rem;
 }
 
@@ -305,7 +305,7 @@ h1 {
 }
 
 .p-block h5 {
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 10px;
 }
 
@@ -340,17 +340,17 @@ h1 {
 .exp-crosslink {
     margin-top: 16px;
     padding-top: 12px;
-    border-top: 1px dashed #cfcece;
+    border-top: 1px dashed #dde3ee;
     font-size: 0.9rem;
 }
 
 .exp-crosslink a {
-    color: #576fa0;
+    color: #003366;
     text-decoration: none;
 }
 
 .exp-crosslink a:hover {
-    color: #b57979;
+    color: #0088b3;
     text-decoration: underline;
 }
 
@@ -358,7 +358,7 @@ h1 {
     background: #fff;
     padding: 28px 36px;
     border-radius: 12px;
-    border-left: 8px solid #e3b87f;
+    border-left: 8px solid #0088b3;
     width: 100%;
     max-width: 720px;
     line-height: 1.85;
@@ -383,7 +383,7 @@ h1 {
 
 .hero-meta {
     font-size: 1rem;
-    color: #666;
+    color: #5f6c80;
     margin-top: 12px;
 }
 
@@ -435,13 +435,13 @@ body.portfolio-page > .subnav {
 
 .landing-sub {
     font-size: 1.25rem;
-    color: #576fa0;
+    color: #003366;
     margin-top: 8px;
 }
 
 .landing-target {
     font-size: 1.2rem;
-    color: #b57979;
+    color: #0088b3;
     font-weight: bold;
     margin: 16px 0 8px;
 }
@@ -458,7 +458,7 @@ body.portfolio-page > .subnav {
 }
 
 .landing-hint {
-    color: #666;
+    color: #5f6c80;
     font-size: 0.92rem;
     line-height: 1.6;
     margin: 36px 0 28px;
@@ -481,7 +481,7 @@ body.portfolio-page > .subnav {
     text-decoration: none;
     color: inherit;
     transition: transform 0.25s, box-shadow 0.25s;
-    border: 2px solid #a7b9d7;
+    border: 2px solid #dde3ee;
     background: #fff;
 }
 
@@ -491,21 +491,21 @@ body.portfolio-page > .subnav {
 }
 
 .landing-card--bio {
-    border-top: 6px solid #576fa0;
+    border-top: 6px solid #003366;
 }
 
 .landing-card--net {
-    border-top: 6px solid #b57979;
+    border-top: 6px solid #0088b3;
 }
 
 .landing-card-icon {
     font-size: 2.5rem;
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 16px;
 }
 
 .landing-card--net .landing-card-icon {
-    color: #b57979;
+    color: #0088b3;
 }
 
 .landing-card h2 {
@@ -524,7 +524,7 @@ body.portfolio-page > .subnav {
 .landing-card-go {
     margin-top: 20px;
     font-weight: bold;
-    color: #b57979;
+    color: #0088b3;
     font-size: 0.95rem;
 }
 
@@ -536,17 +536,17 @@ body.portfolio-page > .subnav {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #576fa0;
+    color: #003366;
     font-weight: bold;
     text-decoration: none;
     padding: 12px 22px;
-    border: 2px solid #576fa0;
+    border: 2px solid #003366;
     border-radius: 30px;
     transition: background 0.25s, color 0.25s;
 }
 
 .landing-portfolio-btn:hover {
-    background: #576fa0;
+    background: #003366;
     color: #fff;
 }
 
@@ -568,11 +568,11 @@ body.portfolio-page > .subnav {
 .skills-note {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: #576fa0;
+    color: #003366;
 }
 
 .skills-note a {
-    color: #b57979;
+    color: #0088b3;
     font-weight: bold;
 }
 
@@ -605,7 +605,7 @@ body.portfolio-page > .subnav {
 }
 
 .portfolio-lead {
-    color: #555;
+    color: #5f6c80;
     line-height: 1.65;
     font-size: 0.98rem;
 }
@@ -621,7 +621,7 @@ body.portfolio-page > .subnav {
 }
 
 .portfolio-section--alt {
-    background: #dcdcdc;
+    background: #edf1f7;
     margin-left: -8%;
     margin-right: -8%;
     padding-left: 8%;
@@ -633,7 +633,7 @@ body.portfolio-page > .subnav {
 
 .portfolio-h2 {
     font-size: 1.35rem;
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 16px;
 }
 
@@ -645,13 +645,13 @@ body.portfolio-page > .subnav {
 }
 
 .portfolio-context a {
-    color: #576fa0;
+    color: #003366;
     font-weight: bold;
     text-decoration: none;
 }
 
 .portfolio-context a:hover {
-    color: #b57979;
+    color: #0088b3;
     text-decoration: underline;
 }
 
@@ -674,7 +674,7 @@ body.portfolio-page > .subnav {
     background: #fff;
     padding: 20px 22px;
     border-radius: 10px;
-    border: 1px dashed #a7b9d7;
+    border: 1px dashed #c5d0e0;
     margin-bottom: 12px;
     text-align: left;
 }
@@ -682,7 +682,7 @@ body.portfolio-page > .subnav {
 .portfolio-slot-label {
     display: block;
     font-weight: bold;
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 6px;
 }
 
@@ -707,7 +707,7 @@ body.portfolio-page > .subnav {
 
 .subsection-title {
     font-size: 1.35rem;
-    color: #576fa0;
+    color: #003366;
     margin-bottom: 12px;
     border-left: 5px solid #e3b87f;
     padding-left: 14px;
@@ -716,14 +716,14 @@ body.portfolio-page > .subnav {
 
 .subsection-title small {
     font-size: 0.75rem;
-    color: #a7b9d7;
+    color: #8a96aa;
     text-transform: uppercase;
     margin-left: 8px;
 }
 
 .portfolio-intro {
     font-size: 0.85rem;
-    color: #666;
+    color: #5f6c80;
     margin-bottom: 16px;
     line-height: 1.5;
 }
@@ -736,21 +736,21 @@ body.portfolio-page > .subnav {
     padding: 20px 24px;
     background: #fff;
     border-radius: 12px;
-    border: 1px solid #a7b9d7;
+    border: 1px solid #dde3ee;
     text-decoration: none;
     color: inherit;
     transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .portfolio-card:hover {
-    border-color: #576fa0;
+    border-color: #003366;
     box-shadow: 0 6px 20px rgba(87, 111, 160, 0.12);
 }
 
 .portfolio-card-icon {
     flex-shrink: 0;
     font-size: 2rem;
-    color: #b57979;
+    color: #0088b3;
 }
 
 .portfolio-card-body {
@@ -769,14 +769,14 @@ body.portfolio-page > .subnav {
 
 .portfolio-card-meta {
     font-size: 0.88rem;
-    color: #666;
+    color: #5f6c80;
 }
 
 .portfolio-card-action {
     flex-shrink: 0;
     font-size: 0.9rem;
     font-weight: bold;
-    color: #576fa0;
+    color: #003366;
 }
 
 /* 技能展示 */
@@ -791,14 +791,14 @@ body.portfolio-page > .subnav {
 }
 
 .skill-group h5 {
-    color: #b57979;
+    color: #0088b3;
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
 
 .skill-tags span {
     display: inline-block;
-    background: #a7b9d7;
+    background: #003366;
     color: #fff;
     padding: 8px 15px;
     margin: 5px;
@@ -825,7 +825,7 @@ body.portfolio-page > .subnav {
 }
 
 .btn-primary {
-    background: #b57979;
+    background: #0088b3;
     color: #fff;
     padding: 15px 35px;
     text-decoration: none;
@@ -836,8 +836,8 @@ body.portfolio-page > .subnav {
 }
 
 .btn-secondary {
-    border: 2px solid #e3b87f;
-    color: #e3b87f;
+    border: 2px solid #0088b3;
+    color: #0088b3;
     padding: 13px 35px;
     text-decoration: none;
     border-radius: 30px;
@@ -847,7 +847,7 @@ body.portfolio-page > .subnav {
 }
 
 .btn-primary:hover {
-    background: #a7b9d7;
+    background: #005d80;
 }
 
 /* 装饰元素 */
@@ -856,7 +856,7 @@ body.portfolio-page > .subnav {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    color: #a7b9d7;
+    color: #8a96aa;
     font-size: 0.8rem;
     letter-spacing: 3px;
     animation: bounce 2s infinite;
